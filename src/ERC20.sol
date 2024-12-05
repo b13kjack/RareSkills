@@ -115,9 +115,9 @@ contract ERC20 {
      * @return A boolean indicating whether the operation succeeded.
      */
     function transferFrom(address from, address to, uint256 amount) public returns (bool) {
-        require(from != address(0), "ERC20: transfer from the zero address"); // Ensure the sender is valid
-        require(to != address(0), "ERC20: transfer to the zero address"); // Ensure the recipient is valid
-        require(amount <= balances[from], "ERC20: transfer amount exceeds balance"); // Ensure the sender has enough balance
+        require(from != address(0), "ERC20: transfer from the zero address");                         // Ensure the sender is valid
+        require(to != address(0), "ERC20: transfer to the zero address");                             // Ensure the recipient is valid
+        require(amount <= balances[from], "ERC20: transfer amount exceeds balance");                 // Ensure the sender has enough balance
         require(amount <= allowances[from][msg.sender], "ERC20: transfer amount exceeds allowance"); // Ensure the caller is allowed to spend
 
         balances[from] -= amount;                        // Subtract the amount from the sender's balance
