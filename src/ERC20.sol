@@ -2,14 +2,14 @@
 pragma solidity 0.8.28;
 
 /// @title ERC20 Token Implementation for Learning
-/// @author b13kjack
+/// @author @b13kjack + @dmastermind
 /// @notice This contract implements the ERC-20 standard, allowing for basic token operations.
 /// @dev This contract follows the ERC-20 standard as defined in https://eips.ethereum.org/EIPS/eip-20
 contract ERC20 {
     // Token details
-    string public ExampleToken;         // Name of the token (e.g., "MyToken")
-    string public EXMP;                // Symbol of the token (e.g., "MTK")
-    uint8 public decimals = 18;       // Number of decimal places (commonly 18)
+    string public ExampleToken;         // Name of the token
+    string public EXMP;                // Symbol of the token
+    uint8 public decimals = 18;       // Number of decimal places
     uint256 public totalSupply;      // Total number of tokens in circulation
 
     // Mappings to keep track of balances and allowances
@@ -33,8 +33,8 @@ contract ERC20 {
         uint8 _decimals,
         uint256 _initialSupply
     ) {
-        ExampleToken = _name;                         // Set the token name
-        EXMP = _symbol;                    // Set the token symbol
+        ExampleToken = _name;                 // Set the token name
+        EXMP = _symbol;                      // Set the token symbol
         decimals = _decimals;               // Set the number of decimals
         _mint(msg.sender, _initialSupply); // Mint the initial supply to the deployer
         // msg.sender refers to the address that deployed the contract
